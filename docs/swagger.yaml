@@ -16,23 +16,23 @@ definitions:
       theme:
         type: string
     type: object
-  request.ProductRequest:
+  request.CartRequest:
     properties:
-      name:
-        type: string
+      id:
+        type: integer
     type: object
 info:
   contact: {}
 paths:
-  /product:
+  /cart:
     post:
-      description: Get List of product
+      description: Pay Cart Items
       parameters:
       - description: product_name
         in: body
         name: product_name
         schema:
-          $ref: '#/definitions/request.ProductRequest'
+          $ref: '#/definitions/request.CartRequest'
       produces:
       - application/json
       responses:
@@ -40,5 +40,5 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/model.Product'
-      summary: Get List of product
+      summary: Pay Cart Items
 swagger: "2.0"

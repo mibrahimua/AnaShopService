@@ -16,20 +16,20 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/product": {
+        "/cart": {
             "post": {
-                "description": "Get List of product",
+                "description": "Pay Cart Items",
                 "produces": [
                     "application/json"
                 ],
-                "summary": "Get List of product",
+                "summary": "Pay Cart Items",
                 "parameters": [
                     {
                         "description": "product_name",
                         "name": "product_name",
                         "in": "body",
                         "schema": {
-                            "$ref": "#/definitions/request.ProductRequest"
+                            "$ref": "#/definitions/request.CartRequest"
                         }
                     }
                 ],
@@ -71,11 +71,11 @@ const docTemplate = `{
                 }
             }
         },
-        "request.ProductRequest": {
+        "request.CartRequest": {
             "type": "object",
             "properties": {
-                "name": {
-                    "type": "string"
+                "id": {
+                    "type": "integer"
                 }
             }
         }
